@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root{
+    --Linear-gradient-1: hsl(249, 99%, 64%);
+    --Linear-gradient-2:hsl(278, 94%, 30%);
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+*, *>*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--Light-grayish-violet);
+    font-size: 18px;
+}
+
+main{
+    min-height: 400px;
+    min-width: 375px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container{
+    height: 200px;
+    width: 100%;
+    position: relative;
+    background-image: url("images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-1,
+.img-2{
+    width: 280px;
+}
+
+.front-card{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-65%, 10%);
+    z-index: 10;
+}
+
+.front-card-data{
+    position: relative;
+    display: flex;
+    gap:45px;
+    flex-direction: column;
+    z-index: 11;
+    top: -140px;
+    left: 20px;
+}
+
+.card-logo{
+    width: 50px;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-text{
+    position: relative;
+}
+
+.card-name{
+    position: absolute;
+}
+
+.exp-date{
+    position: absolute;
+    right: 30px;
+}
+
+.back-card{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.back-card-data{
+    position: absolute;
+    top: 50%;
+    left:75%;
+    transform: translateY(-70%);
+    z-index: 6;
+}
+
+.form-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position:relative;
+}
+
+.form,
+.success{
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    max-width: 750px;
+    gap: 20px;
+    z-index: 11;
+}
+
+.grid-1,
+.grid-2,
+.sub-grid-1,
+.sub-grid-2{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 100%;
+}
+
+.sub-grid-2{
+    justify-content: space-between;
+}
+
+.grid-3{
+    display: flex;
+    width: 100%;
+    gap:10px;
+}
+
+.grid-date{
+    display: flex;
+    gap:10px;
+}
+
+input,
+button{
+    width:100%;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--Dark-grayish-violet);
+    outline: none;
+    position: relative;
+}
+
+button{
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+}
+
+label,
+input{
+    color:var(--Very-dark-violet);
+}
+
+input:focus{
+    background: linear-gradient(var(--White), var(--White)) padding-box, linear-gradient(to right, var(--Linear-gradient-1), var(--Linear-gradient-2)) border-box;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.success{
+    position: absolute;
+    text-align: center;
+    display: none;
+}
+
+.success .title{
+    color: var(--Very-dark-violet);
+}
+
+.checked{
+    width: 100px;
+    align-self: center;
+}
+
+#reset,
+#button{
+    cursor: pointer;
+}
+
+@media screen and (min-width:1020px) {
+    main{
+        min-height: 400px;
+        height: 100vh;
+        flex-direction: row;
+    }
+
+    .card-container{
+        min-height: 400px;
+        height: 100vh;
+        background-image: url(./images/bg-main-desktop.png);
+        width: 60%;
+    }
+
+    .form-container{
+        height: 100vh;
+    }
+
+    .front-card{
+        top:20%;
+        left:25%;
+        transform: translate(25%,0%);
+    }
+
+    .back-card{
+        top:50%;
+        left: 50%;
+        transform:translate(0,0)
+    }
+}

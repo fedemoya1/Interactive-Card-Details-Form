@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Interactive Card Details</title>
+    <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+</head>
+</head>
+<body>
+    <main>
+        <section class="card-container">
+            <div class="cards">
+                <div class="front-card">
+                    <img src="images/bg-card-front.png" alt="front-card" class="img-1">
+                    <div class="front-card-data">
+                        <img src="images/card-logo.svg" alt="card-logo" class="card-logo">
+                        <div class="card-info">
+                            <span class="card-number">
+                                0000 0000 0000 0000
+                            </span>
+                            <div class="card-text">
+                                <span class="card-name">
+                                    JANE APPLESEED
+                                </span>
+                                <span class="exp-date">
+                                    00/00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back-card">
+                    <img src="images/bg-card-back.png" alt="back-card" class="img-2">
+                    <div class="back-card-data">
+                        <span class="cvc">
+                            000
+                        </span>
+                    </div>
+                </div>
+            </div>                    
+        </section>
+        <section class="form-container">
+            <form class="form" id='form' action="#">
+                <div class="grid-1">
+                    <label for="name">CARDHOLDER NAME</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Jane Appleseed" minlength="3" maxlength="16" required>
+                </div>
+                <div class="grid-2">
+                    <label for="number">CARD NUMBER</label>
+                    <input type="number" id="number" name="number" placeholder="1234 5678 9123 000" minlength="16" maxlength="16" required>
+                </div>
+                <div class="grid-3">
+                    <div class="sub-grid-1">
+                        <label for="exp">EXP.DATE (MM/YY)</label>
+                        <div class="grid-date">
+                            <input type="number" id="exp-mm" name="exp" placeholder="MM" minlength="2" maxlength="2" required>
+                            <input type="number" id="exp-yy" name="exp-yy" placeholder="YY" minlength="2" maxlength="2" required>
+                        </div>
+                    </div>
+                    <div class="sub-grid-2">
+                        <label for="cvc">CVC</label>
+                        <input type="number" id="cvc" name="cvc" placeholder="e.g. 123" minlength="3" maxlength="3" required>
+                    </div>
+                </div>
+                <button type="submit" id="button">Confirm</button>
+            </form>
+
+            <section class="success">
+                <img src="/images/icon-complete.svg" alt="form-completed" class="checked">
+                <span class="title">THANK YOU!</span>
+                <span class="description">We've added your card details</span>
+                <button id='reset' type="reset">Continue</button>
+            </section>
+
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
